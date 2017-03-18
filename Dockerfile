@@ -10,9 +10,9 @@ RUN rm gcc-arm-none-eabi-6_2-2016q4-20161216-linux.tar.bz2
 ENV PATH "$PATH:/gcc-arm-none-eabi-6_2-2016q4/bin"
 
 # libcoap
-git clone https://github.com/obgm/libcoap.git libcoap
-cd libcoap
-./autogen.sh
-./configure --disable-examples
-make
-sudo make install
+RUN git clone https://github.com/obgm/libcoap.git libcoap
+RUN cd libcoap
+RUN ./autogen.sh
+RUN ./configure --disable-examples
+RUN make
+RUN sudo make install
